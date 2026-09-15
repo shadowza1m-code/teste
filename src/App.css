@@ -1,0 +1,546 @@
+/**
+ * Estilos principais da aplicação - Estilo SIGAA
+ * Design corporativo, simples e funcional do IFSC
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e8ecf0;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ========== Page Layout ========== */
+.App {
+  min-height: 100vh;
+  background-color: #e8ecf0;
+}
+
+.orientador-page {
+  width: 100%;
+  background-color: #e8ecf0;
+  overflow: hidden;
+}
+
+/* ========== Header ========== */
+.page-header {
+  background-color: #003366;
+  color: white;
+  padding: 12px 20px;
+  border-bottom: 3px solid #1a4d80;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-header h1 {
+  font-size: 1.3rem;
+  margin-bottom: 3px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.page-header p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.page-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.page-navigation button,
+.header-actions button {
+  padding: 7px 12px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.page-navigation button:hover,
+.page-navigation button.active,
+.header-actions button:hover {
+  background-color: white;
+  color: #003366;
+}
+
+.header-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* ========== Tabs Navigation ========== */
+.tabs {
+  display: flex;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ccc;
+  margin: 0;
+  padding: 0;
+}
+
+.tabs button {
+  flex: 0 1 auto;
+  padding: 12px 30px;
+  background-color: #e8e8e8;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-right: 1px solid #ccc;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #333;
+  font-weight: normal;
+  transition: background-color 0.2s ease;
+}
+
+.tabs button:last-child {
+  border-right: none;
+}
+
+.tabs button:hover {
+  background-color: #d5d5d5;
+}
+
+.tabs button.active {
+  background-color: #ffffff;
+  border-bottom: 2px solid #003366;
+  color: #003366;
+  font-weight: bold;
+}
+
+/* ========== Page Content ========== */
+.page-content {
+  padding: 30px 40px;
+  background-color: #ffffff;
+  margin: 20px;
+  border: 1px solid #cccccc;
+  min-height: 500px;
+}
+
+/* ========== Formulário ========== */
+.orientador-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.orientador-form h2 {
+  color: #003366;
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #e8ecf0;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #003366;
+  background-color: #ffffcc;
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+  background-color: #eeeeee;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Erros de Validação */
+.form-group .input-erro {
+  border-color: #cc0000 !important;
+  background-color: #fff5f5;
+}
+
+.form-group .erro-texto {
+  display: block;
+  color: #cc0000;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+/* Linhas de Pesquisa */
+.linhas-input {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.linhas-input input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+.linhas-input button {
+  padding: 8px 16px;
+  background-color: #003366;
+  color: white;
+  border: 1px solid #003366;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+.linhas-input button:hover:not(:disabled) {
+  background-color: #1a4d80;
+}
+
+.linhas-input button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.linhas-lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.linhas-lista li {
+  background-color: #e8f0f5;
+  color: #003366;
+  padding: 6px 10px;
+  border: 1px solid #b3d9ff;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.linhas-lista button {
+  background: none;
+  border: none;
+  color: #c74c36;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.linhas-lista button:hover {
+  color: #a83028;
+}
+
+/* Submit Button */
+.orientador-form > button {
+  width: 100px;
+  padding: 10px;
+  background-color: #003366;
+  color: white;
+  border: 1px solid #003366;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 25px;
+}
+
+.orientador-form > button:hover:not(:disabled) {
+  background-color: #1a4d80;
+}
+
+.orientador-form > button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ========== Listagem ========== */
+.orientador-list h2 {
+  color: #003366;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #e8ecf0;
+  padding-bottom: 10px;
+}
+
+.filtro-form {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 25px;
+}
+
+.filtro-form input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+.filtro-form button {
+  padding: 8px 20px;
+  background-color: #003366;
+  color: white;
+  border: 1px solid #003366;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.filtro-form button:hover {
+  background-color: #1a4d80;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.orientador-card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.orientador-card:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  border-color: #003366;
+}
+
+.orientador-card h3 {
+  color: #003366;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  border-bottom: 1px solid #e8ecf0;
+  padding-bottom: 8px;
+}
+
+.orientador-card p {
+  color: #555;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+}
+
+.orientador-card .email {
+  font-weight: bold;
+  color: #003366;
+  margin-top: 8px;
+}
+
+.orientador-card .departamento {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.orientador-card .vagas {
+  padding: 8px 0;
+  border-top: 1px solid #e8ecf0;
+  border-bottom: 1px solid #e8ecf0;
+  margin: 10px 0;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.orientador-card .vagas strong {
+  color: #003366;
+}
+
+.orientador-card .linhas-pesquisa {
+  margin: 10px 0;
+}
+
+.orientador-card .linhas-pesquisa strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #003366;
+  font-size: 0.85rem;
+}
+
+.orientador-card .linhas-pesquisa ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.orientador-card .linhas-pesquisa li {
+  background-color: #f5f5f5;
+  padding: 5px 8px;
+  margin-bottom: 4px;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  border-left: 3px solid #003366;
+}
+
+.orientador-card .biografia {
+  font-style: italic;
+  color: #666;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.orientador-card button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 12px;
+  background-color: #003366;
+  color: white;
+  border: 1px solid #003366;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+.orientador-card button:hover {
+  background-color: #1a4d80;
+}
+
+.vazio {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+  font-size: 1rem;
+}
+
+/* ========== Feedback States ========== */
+.feedback {
+  padding: 12px 15px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-left: 4px solid;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feedback.loading {
+  background-color: #ffffcc;
+  color: #997700;
+  border-left-color: #997700;
+}
+
+.feedback.erro {
+  background-color: #ffcccc;
+  color: #cc0000;
+  border-left-color: #cc0000;
+}
+
+.feedback.sucesso {
+  background-color: #ccffcc;
+  color: #006600;
+  border-left-color: #006600;
+}
+
+/* ========== Notificação ========== */
+.notificacao {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333333;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideInRight 0.3s ease;
+  font-size: 0.9rem;
+  border-left: 4px solid #003366;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========== Responsivo ========== */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs button {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .orientador-form {
+    max-width: 100%;
+  }
+}
